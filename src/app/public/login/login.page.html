@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <img src="../../../assets/loginimage.png">
+    <form [formGroup]="loginForm">
+      
+  <ion-item>
+      <ion-label position="floating">Username/Email</ion-label>
+      <ion-input type="text" formControlName="email" class="form-control"  clearInput required></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="text" formControlName="password" class="form-control"  clearInput required></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 class="textRight">
+        <ion-button (click)="elogin()" expand="block">Login</ion-button>
+      </ion-col>
+      <!-- <ion-col col-6> -->
+        <!-- <ion-button expand="block"  routerLink="/register" routerDirection="forward">Register</ion-button> -->
+        <!-- <ion-button (click)="ologin()" expand="block">O Login</ion-button> -->
+      <!-- </ion-col> -->
+    </ion-row>
+  </ion-grid>
+</form>
+</ion-content>
+
+
+

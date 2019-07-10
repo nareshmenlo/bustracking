@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add New Bus Route</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div style="margin-bottom: 20px;"></div>
+  <form [formGroup]="addBusRouteForm">
+    <ion-item>
+      <ion-label position="floating">Route ID</ion-label>
+      <ion-input type="text" formControlName="routeid" class="form-control" clearInput required></ion-input>
+    </ion-item>
+    <ion-item formArrayName="destinations"
+      *ngFor="let item of addBusRouteForm.get('destinations').controls; let i = index;">
+      <!-- <div [formGroupName]="i"> -->
+        <ion-label position="floating">Dest {{i}}</ion-label>
+        <ion-input type="text" formControlName="i" class="form-control" clearInput required></ion-input>
+      <!-- </div> -->
+    </ion-item>
+    <ion-button (click)="addDestination()">+</ion-button>
+    <!-- 
+    <ion-item>
+      <ion-label position="floating">Dest 2</ion-label>
+      <ion-input type="text" formControlName="dest2" class="form-control" clearInput required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dest 3</ion-label>
+      <ion-input type="text" formControlName="dest3" class="form-control" clearInput required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dest 4</ion-label>
+      <ion-input type="text" formControlName="dest4" class="form-control" clearInput required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dest 5</ion-label>
+      <ion-input type="text" formControlName="dest5" class="form-control" clearInput required></ion-input>
+    </ion-item> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="textRight">
+          <ion-button [disabled]="!addBusRouteForm.valid" (click)="addBusRoute()" expand="block">Add Bus Route
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

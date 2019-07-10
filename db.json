@@ -1,0 +1,23 @@
+{
+    "buses": [
+        { "BUSID": "BUS001", "BUSNAME": "Bus 001", "DRIVER" : "DRIVER 001",  "CONTACT": "8013865207", "ROUTEID": "1001" },
+        { "BUSID": "BUS002", "BUSNAME": "Bus 002", "DRIVER" : "DRIVER 002",  "CONTACT": "8013865208", "ROUTEID": "1001" },
+        { "BUSID": "BUS003", "BUSNAME": "Bus 003", "DRIVER" : "DRIVER 003",  "CONTACT": "8013865209", "ROUTEID": "1001"}
+    ],
+    "bus_stops": [
+        { "STOPID": "STOP001", "STOPNAME": "Stop 001", "BUSID":"BUS001" },
+        { "STOPID": "STOP002", "STOPNAME": "Stop 002", "BUSID":"BUS001" },
+        { "STOPID": "STOP003", "STOPNAME": "Stop 003", "BUSID":"BUS001" },
+        { "STOPID": "STOP004", "STOPNAME": "Stop 004", "BUSID":"BUS001" },
+        { "STOPID": "STOP005", "STOPNAME": "Stop 005", "BUSID":"BUS001" },
+        { "STOPID": "STOP006", "STOPNAME": "Stop 006", "BUSID":"BUS001" }
+    ],
+    "users": [
+        { "USERID": "USER001", "USERNAME": "QWE", "STOPID": "STOP001" },
+        { "USERID": "USER002", "USERNAME": "Abc", "STOPID": "STOP002" },
+        { "USERID": "USER003", "USERNAME": "TSR", "STOPID": "STOP003" },
+        { "USERID": "USER004", "USERNAME": "POI", "STOPID": "STOP004" },
+        { "USERID": "USER005", "USERNAME": "KJL", "STOPID": "STOP005" },
+        { "USERID": "USER006", "USERNAME": "UYG", "STOPID": "STOP006" }
+    ]
+}

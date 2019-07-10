@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <!-- <ion-back-button defaultHref="home"></ion-back-button> -->
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Bus Routes</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/add-bus-route">
+          <ion-icon name="add-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <!-- {
+ "USERID" : "sabarna17",
+ "ROUTEID": "1001", 
+ "DEST1": "madhapur", 
+ "DEST2": "cyber towers", 
+ "DEST3": "mindspace", 
+ "DEST4": "raidurgh",
+ "DEST5": "darga"
+} -->
+    <ion-card *ngFor="let route of routes">
+        <ion-card-header>
+          <div>Route Id:{{route.ROUTEID}}</div>
+        </ion-card-header>
+        <ion-card-content>
+          <div>DEST1: {{route.DEST1}}</div>
+          <div>DEST2: {{route.DEST2}}</div>
+          <div>DEST3: {{route.DEST3}}</div>
+          <div>DEST4: {{route.DEST4}}</div>
+          <div>DEST5: {{route.DEST5}}</div>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
+
+
+  

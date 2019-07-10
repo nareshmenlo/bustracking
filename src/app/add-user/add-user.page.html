@@ -1,0 +1,49 @@
+<!-- <menu-page></menu-page> -->
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Add New Person</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <div style="margin-bottom: 20px;"></div>
+    <form [formGroup]="addPersonForm">
+      <ion-item>
+        <ion-label position="floating">Person ID</ion-label>
+        <ion-input type="text" formControlName="personid" class="form-control" clearInput required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bus ID</ion-label>
+        <ion-select (ionChange)="getBusStops($event)" [compareWith]="compareWith" formControlName="busid" placeholder="Select Bus">
+          <ion-select-option *ngFor="let bus of buses">{{bus.BUSID}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Person Name</ion-label>
+        <ion-input type="text" formControlName="personname" class="form-control" clearInput required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contact</ion-label>
+        <ion-input type="text" formControlName="contact" class="form-control" clearInput required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label position="floating">Person Pasword</ion-label>
+          <ion-input type="text" formControlName="pass" class="form-control" clearInput required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Stop</ion-label>          
+        <ion-select [compareWith]="compareWith" formControlName="stop" placeholder="Select Stop">
+          <ion-select-option *ngFor="let stop of stops">{{stop}}</ion-select-option>
+        </ion-select>
+        </ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6 class="textRight">
+            <ion-button [disabled]="!addPersonForm.valid" (click)="addPerson()" expand="block">Add Person</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>

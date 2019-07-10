@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add New Bus</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div style="margin-bottom: 20px;"></div>
+  <form [formGroup]="addBusForm">
+    <ion-item>
+      <ion-label position="floating">Bus ID</ion-label>
+      <ion-input type="text" formControlName="busid" class="form-control" clearInput required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Driver</ion-label>
+      <ion-input type="text" formControlName="driver" class="form-control" clearInput required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Route ID</ion-label>
+      <ion-select  [compareWith]="compareWith" formControlName="routeid">
+        <ion-select-option *ngFor="let route of routes">{{route.ROUTEID}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Driver Contact</ion-label>
+      <ion-input type="text" formControlName="contactno" class="form-control" clearInput required></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="textRight">
+          <ion-button [disabled]="!addBusForm.valid" (click)="addBus()" expand="block">Add Bus</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

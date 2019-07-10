@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <!-- <ion-back-button defaultHref="home"></ion-back-button> -->
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Person</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/add-person">
+          <ion-icon name="add-circle"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <!-- {	
+        "USERID"	 : "sabarna17",
+	"PERSONID"   : "P2",
+	"BUSID"      : "BUS2",
+	"PERSONNAME" : "RICK01",
+	"CONTACT"	 : "8013865207",
+	"PASS"		 : "ABC12",
+	"STOP"		 : "madhapur" 
+       } -->
+    <ion-card *ngFor="let person of persons">
+        <ion-card-header>
+          <div>Person:{{bus.PERSONNAME}}</div>
+        </ion-card-header>
+        <ion-card-content>
+          <div>Person ID: {{bus.PERSONID}}</div>
+          <div>Bus ID: {{bus.BUSID}}</div>
+          <div>Stop: {{bus.STOP}}</div>
+          <div>Contact: {{bus.CONTACT}}</div>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
+
+
+  

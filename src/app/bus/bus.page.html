@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="home"></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Buses</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/add-bus">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let bus of buses">
+        <ion-card-header>
+          <div>Bus:{{bus.BUSID}}</div>
+        </ion-card-header>
+        <ion-card-content>
+          <div>Route ID: {{bus.ROUTEID}}</div>
+          <div>Driver: {{bus.DRIVER}}</div>
+          <div>Contact: {{bus.CONTACT}}</div>
+        </ion-card-content>
+      </ion-card>
+</ion-content>
